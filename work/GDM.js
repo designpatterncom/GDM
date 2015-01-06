@@ -15,7 +15,7 @@ Display.prototype = {
  
 var Speaking = function() {
     this.execute = function(question, answer) {
-		window.location.href = "./strategy.html"
+		window.location.href = "../draganddrop/drag_drop3.html"
     }
 };
  
