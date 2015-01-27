@@ -25,7 +25,8 @@ Shipping.prototype = {
 var UPS = function() {
     this.calculate = function(package) {
         // calculations...
-        return "$45.95";
+        
+        return package.from;
     }
 };
  
