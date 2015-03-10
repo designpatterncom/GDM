@@ -73,8 +73,10 @@ function run() {
     if(problem!=null) marking.mark(problem_num);
 
 
-    document.close();
+    document.open();
     document.write("<!DOCTYPE html><html><head><meta charset='sjis'><title>サンプル</title></head><body><form name='form1'><input type='hidden' name='problem_type' value='2'><input type='hidden' name='problem_num' value='1'><input type='button' value='再生' onclick='run()'><script src='sample.js'></script></body></html>");
+    document.close();
+
 
     //location.href="URL";
     //location.href="file:///C:/Users/C22168/Desktop/strategy_gdm/sound.html";
