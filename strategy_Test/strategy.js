@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="sjis">
-<title>サンプル</title>
-</head>
-
-<body>
-<script>
-
 var Shipping = function() {
     this.company = "";
 };
@@ -75,10 +65,3 @@ function run() {
  
     log.show();
 }
-
-</script>
-
-<input type="button" value="alert" onclick="run()">
-
-</body>
-</html>
