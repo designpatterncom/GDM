@@ -1,0 +1,567 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0066)http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_8_A -->
+<html xmlns="http://www.w3.org/1999/xhtml" class="win chrome chrome4 webkit webkit5 wf-ptsansnarrow-n4-active wf-droidsans-n4-active wf-droidserif-n4-active wf-cousine-n4-active wf-active"><head><meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS"><script async="" src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/aizu_oj.json"></script>
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+ <!-- for only description.jsp-->
+
+
+<title>二分探索木 挿入| アルゴリズムとデータ構造 | Aizu Online Judge</title>
+
+
+
+
+<link rel="stylesheet" href="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/frame.css" type="text/css" media="all">
+<link rel="stylesheet" href="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" href="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/sp.css" type="text/css" media="all">
+<link rel="stylesheet" href="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/login.css" type="text/css" media="all">
+<link rel="shortcut icon" href="http://judge.u-aizu.ac.jp/onlinejudge/favicon.ico">
+<script type="text/javascript" async="" src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/ga.js"></script><script src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/jsapi"></script>
+<script>
+google.load("chrome-frame", "1.0.2");
+google.load("jquery", "1.5.1");
+google.load("jqueryui", "1.8.10");
+google.load("webfont", "1.0.19");
+google.setOnLoadCallback(function(){WebFont.load({google: {families: ['PT Sans Narrow','Droid Sans','Droid Serif','Cousine']}});});</script><script src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/CFInstall.min.js" type="text/javascript"></script><script src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/jquery.min.js" type="text/javascript"></script><script src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/jquery-ui.min.js" type="text/javascript"></script><script src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/webfont.js" type="text/javascript"></script>
+<script language="JavaScript" type="text/javascript" src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/jquery.browser.js"></script>
+<script language="JavaScript" type="text/javascript" src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/jquery.cookie.js"></script>
+<script language="JavaScript" type="text/javascript" src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/script.js"></script>
+<script language="JavaScript" type="text/javascript" src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/login.js"></script>
+<script language="JavaScript" type="text/javascript" src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/varmath.js" charset="UTF-8"></script>
+<!-- icon -->
+<!-- <link rel="shortcut icon" href="http://" />???-->
+
+<link rel="stylesheet" href="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/jquery-ui-1.8.6.custom.css" type="text/css">
+<link rel="stylesheet" href="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/rose.css" type="text/css">
+<link rel="stylesheet" href="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/description.css" type="text/css">
+<script language="JavaScript" type="text/javascript" src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/analytics.js"></script>
+
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><link rel="stylesheet" href="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/css"><style type="text/css">.MathJax_Display {text-align: center; margin: 1em 0em; position: relative; display: block; width: 100%}
+.MathJax .merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+#MathJax_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true'); padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; border: 0; padding: 0; margin: 0}
+.MathJax img, .MathJax nobr, .MathJax a {border: 0; padding: 0; margin: 0; max-width: none; max-height: none; vertical-align: 0; line-height: normal; text-decoration: none}
+img.MathJax_strut {border: 0 !important; padding: 0 !important; margin: 0 !important; vertical-align: 0 !important}
+.MathJax span {display: inline; position: static; border: 0; padding: 0; margin: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+.MathJax nobr {white-space: nowrap ! important}
+.MathJax img {display: inline ! important; float: none ! important}
+.MathJax * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.MathJax_Processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MathJax_Processed {display: none!important}
+.MathJax_ExBox {display: block; overflow: hidden; width: 1px; height: 60ex}
+.MathJax .MathJax_EmBox {display: block; overflow: hidden; width: 1px; height: 60em}
+.MathJax .MathJax_HitBox {cursor: text; background: white; opacity: 0; filter: alpha(opacity=0)}
+.MathJax .MathJax_HitBox * {filter: none; opacity: 1; background: transparent}
+#MathJax_Tooltip * {filter: none; opacity: 1; background: transparent}
+@font-face {font-family: MathJax_Main; src: url('http://acm-icpc.aitea.net/files/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff') format('woff'), url('http://acm-icpc.aitea.net/files/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf') format('opentype')}
+@font-face {font-family: MathJax_Main; src: url('http://acm-icpc.aitea.net/files/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Bold.woff') format('woff'), url('http://acm-icpc.aitea.net/files/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Main-Bold.otf') format('opentype'); font-weight: bold}
+@font-face {font-family: MathJax_Main; src: url('http://acm-icpc.aitea.net/files/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Italic.woff') format('woff'), url('http://acm-icpc.aitea.net/files/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Main-Italic.otf') format('opentype'); font-style: italic}
+@font-face {font-family: MathJax_Math; src: url('http://acm-icpc.aitea.net/files/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff') format('woff'), url('http://acm-icpc.aitea.net/files/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Math-Italic.otf') format('opentype'); font-style: italic}
+@font-face {font-family: MathJax_Caligraphic; src: url('http://acm-icpc.aitea.net/files/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Caligraphic-Regular.woff') format('woff'), url('http://acm-icpc.aitea.net/files/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Caligraphic-Regular.otf') format('opentype')}
+@font-face {font-family: MathJax_Size1; src: url('http://acm-icpc.aitea.net/files/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Size1-Regular.woff') format('woff'), url('http://acm-icpc.aitea.net/files/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Size1-Regular.otf') format('opentype')}
+@font-face {font-family: MathJax_Size2; src: url('http://acm-icpc.aitea.net/files/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Size2-Regular.woff') format('woff'), url('http://acm-icpc.aitea.net/files/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Size2-Regular.otf') format('opentype')}
+@font-face {font-family: MathJax_Size3; src: url('http://acm-icpc.aitea.net/files/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Size3-Regular.woff') format('woff'), url('http://acm-icpc.aitea.net/files/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Size3-Regular.otf') format('opentype')}
+@font-face {font-family: MathJax_Size4; src: url('http://acm-icpc.aitea.net/files/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Size4-Regular.woff') format('woff'), url('http://acm-icpc.aitea.net/files/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Size4-Regular.otf') format('opentype')}
+.MathJax .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+<body id="niceBody" class="goodStyle"><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_Hidden"></div></div><div id="MathJax_Message" style="display: none;"></div>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+$(function(){
+    $('#tree #treeProblem .trigger2').each(function(i) {
+        $(this).hover(
+            function(){
+                var menuPos = $(this).position();
+                var w = 173 + $(this).width();
+                var tl = menuPos.top + 40;
+                var targetSubTree = i+1;
+                $('#nav #subtree').attr('data-target', 0).css({'margin': '' + tl + 'px 0px 0px ' + w + 'px'}).show();
+                $('#nav #subtree .dat').hide();
+                $('#nav #subtree .dat:nth-child('+targetSubTree+')').show();
+                $(this).addClass('active');
+            },
+            function(){
+                $(this).removeClass('active');
+                //$('#nav .subtree').hide();
+            }
+        );
+    });
+    $('#nav #subtree').hover(
+            function() {
+                //var targetTrigger = 2 * $('#nav #tree').attr('data-target') + 1; // 2n+1
+                $(this).show();
+                $('#nav #tree').show();
+                //$('#nav #menu a:nth-child('+targetTrigger+')').addClass('active');
+            },
+            function(){
+                $(this).hide();
+                //$('#nav #menu .trigger').removeClass('active');
+            }
+    );
+    $('#menu .trigger').hover(
+            function(){
+                 $('#nav #subtree').hide();
+            }
+    );
+
+});
+</script>
+
+	<div id="logo" style="left: 269.545px;"><a href="http://judge.u-aizu.ac.jp/onlinejudge/index.jsp" id="home">AIZU ONLINE JUDGE</a></div>
+	<div id="nav">
+		<div class="wrapper">
+			<div id="menu">
+				<a href="javascript:void(0)" class="link" id="menuPagetop">PAGETOP</a>
+				<div class="split">&nbsp;</div>
+				<a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_8_A#" class="link trigger" id="menuProblem">PROBLEM</a>
+				<div class="split">&nbsp;</div>
+				<a href="http://judge.u-aizu.ac.jp/onlinejudge/ranking.jsp" class="link trigger" id="menuRank">RANKING</a>
+				<div class="split">&nbsp;</div>
+				<a href="http://judge.u-aizu.ac.jp/onlinejudge/status.jsp" class="link trigger" id="menuStatus">STATUS</a>
+				<div class="split">&nbsp;</div>
+				<a href="http://judge.u-aizu.ac.jp/onlinejudge/contest.jsp" class="link trigger" id="menuContest">CONTEST</a>
+				<div class="split">&nbsp;</div>
+				<a href="http://judge.u-aizu.ac.jp/onlinejudge/course.jsp#all" class="link trigger" id="menuCourse">COURSE</a>
+				<div class="split">&nbsp;</div>
+
+
+				<span class="spacer1">&nbsp;</span>
+			</div>
+			<div id="tree" data-target="1" style="margin: 40px 0px 0px 126.989px; display: none;">
+				<div class="dat" id="treeProblem" style="display: block;">
+					<a class="link trigger2" href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_8_A#"><span class="label">Introduction</span><span class="caption">&nbsp;&nbsp;&nbsp;&nbsp;</span></a>
+					<a class="link trigger2" href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_8_A#"><span class="label">Volume 0-3</span><span class="caption">&nbsp;&nbsp;&nbsp;&nbsp;</span></a>
+					<a class="link trigger2" href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_8_A#"><span class="label">Volume 5-6</span><span class="caption">&nbsp;&nbsp;&nbsp;&nbsp;</span></a>
+					<a class="link trigger2" href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_8_A#"><span class="label">Volume 10,15</span><span class="caption">&nbsp;&nbsp;&nbsp;&nbsp;</span></a>
+					<a class="link trigger2" href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_8_A#"><span class="label">Volume 11-13</span><span class="caption">&nbsp;&nbsp;&nbsp;&nbsp;</span></a>
+					<a class="link trigger2" href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_8_A#"><span class="label">Volume 20-26</span><span class="caption">&nbsp;&nbsp;&nbsp;&nbsp;</span></a>
+				</div>
+				<div class="dat" id="treePank" style="display: none;">
+					<a href="http://judge.u-aizu.ac.jp/onlinejudge/ranking.jsp?criteria=0">Order by Solved</a>
+					<a href="http://judge.u-aizu.ac.jp/onlinejudge/ranking.jsp?criteria=1">Order by Rating</a>
+					<a href="http://judge.u-aizu.ac.jp/onlinejudge/ranking.jsp?criteria=2">Order by Diff</a>
+				</div>
+				<div class="dat" id="treeStatus" style="display: none;">
+					<a href="http://judge.u-aizu.ac.jp/onlinejudge/status.jsp">Last 200 Sub.</a>
+					<!--<a href="#">User Detail</a>-->
+				</div>
+				<div class="dat" id="treeContest" style="display: none;">
+					<a href="http://judge.u-aizu.ac.jp/onlinejudge/contest.jsp">Contest</a>
+					<!--<a href="#">User Detail</a>-->
+				</div>
+				<div class="dat" id="treeCourse" style="display: none;">
+					<a href="http://judge.u-aizu.ac.jp/onlinejudge/course.jsp#all">All</a>
+					<a href="http://judge.u-aizu.ac.jp/onlinejudge/course.jsp#lesson">Lesson</a>
+					<a href="http://judge.u-aizu.ac.jp/onlinejudge/course.jsp#library">Library</a>
+				</div>
+			</div>
+			<div id="subtree" style="display: none;">
+			  <div class="dat" data-target="0">
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?course=ITP1">Introduction to Programming</a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?course=ALDS1">Introduction to Algorithms and Data Structures</a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?course=DSL">Library of Data Structures</a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?course=GRL">Library of Graph Algorithms</a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?course=CGL">Library of Computational Geometry</a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?course=DPL">Library of Dynamic Programming</a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?course=NTL">Library of Number Theory</a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=100"><span class="label">Volume 100</span><span class="caption"><span class="padding12">:</span>Problem set from courses.</span></a>
+			  </div>
+			  <div class="dat" data-target="1">
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=0"><span class="label">Volume 0: </span><span class="caption">All-Japan High School Programming Contest.</span></a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=1"><span class="label">Volume 1: </span><span class="caption">All-Japan High School Programming Contest.</span></a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=2"><span class="label">Volume 2: </span><span class="caption">All-Japan High School Programming Contest.</span></a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=3"><span class="label">Volume 3: </span><span class="caption">All-Japan High School Programming Contest.</span></a>
+			  </div>
+			  <div class="dat" data-target="2">
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=5"><span class="label">Volume 5: </span><span class="caption">Japanese Olympiad in Informatics.</span></a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=6"><span class="label">Volume 6: </span><span class="caption">Japanese Olympiad in Informatics.</span></a>
+			  </div>
+			  <div class="dat" data-target="3">
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=10"><span class="label">Volume 10: </span><span class="caption"> &nbsp; University of Aizu Programming Contest.</span></a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=15"><span class="label">Volume 15: </span><span class="caption"> &nbsp; University of Aizu Programming Contest.</span></a>
+			  </div>
+			  <div class="dat" data-target="4">
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=11"><span class="label">Volume 11: </span><span class="caption"> &nbsp; ACM-ICPC Japan Domestic Contest.</span></a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=12"><span class="label">Volume 12: </span><span class="caption"> &nbsp; ACM-ICPC Asia Regional in Japan.</span></a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=13"><span class="label">Volume 13: </span><span class="caption"> &nbsp; ACM-ICPC Asia Regional in Japan.</span></a>
+			  </div>
+			  <div class="dat" data-target="5">
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=20"><span class="label">Volume 20: </span><span class="caption"> &nbsp; ACM-ICPC JAG, Programming Contests.</span></a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=21"><span class="label">Volume 21: </span><span class="caption"> &nbsp; ACM-ICPC JAG, Programming Contests.</span></a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=22"><span class="label">Volume 22: </span><span class="caption"> &nbsp; ACM-ICPC JAG, Programming Contests.</span></a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=23"><span class="label">Volume 23: </span><span class="caption"> &nbsp; ACM-ICPC JAG, Programming Contests.</span></a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=24"><span class="label">Volume 24: </span><span class="caption"> &nbsp; ACM-ICPC JAG, Programming Contests.</span></a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=25"><span class="label">Volume 25: </span><span class="caption"> &nbsp; ACM-ICPC JAG, Programming Contests.</span></a>
+			    <a href="http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?volumeNo=26"><span class="label">Volume 26: </span><span class="caption"> &nbsp; ACM-ICPC JAG, Programming Contests.</span></a>
+			  </div>
+
+			</div>
+			<div id="user">
+			  
+			  <!--<a href="#" class="signup" id=""><span class="line">Test</span></a>-->
+			  <a href="http://judge.u-aizu.ac.jp/onlinejudge/logout.jsp" class="signup" id="login"><span class="line">Logout</span></a>
+			  <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_8_A#" class="signup" id="register"><span class="line">Register/Setting</span></a>
+
+
+			  <div id="registerBox" class="userBox">     
+			    <form id="registerForm" class="userForm" method="post" action="http://judge.u-aizu.ac.jp/onlinejudge/index.jsp">
+			      <fieldset id="body">
+			      <a href="http://judge.u-aizu.ac.jp/onlinejudge/register.jsp">Register/Setting</a>
+				<span class="spacer1">&nbsp;</span>
+			      <a href="http://judge.u-aizu.ac.jp/onlinejudge/update.jsp">Update Info.</a>
+				<span class="spacer1">&nbsp;</span>
+			      <a href="http://judge.u-aizu.ac.jp/onlinejudge/psupdate.jsp">Update Pass.</a>
+			      </fieldset>
+			    </form>
+			  </div>
+
+			  
+			</div>
+		</div>
+	</div>
+	<div id="header">
+		<div class="wrapper">
+			<div id="lang">
+				<a href="http://judge.u-aizu.ac.jp/onlinejudge/index.jsp?lang=ja" id="langJp">Japanese</a>
+				<span class="padding6 small0">&nbsp;</span>
+				<a href="http://judge.u-aizu.ac.jp/onlinejudge/index.jsp?lang=en" id="langEn" class="active">English</a>
+			</div>
+			<div id="pwd">
+			  
+				<a href="http://judge.u-aizu.ac.jp/onlinejudge/user.jsp?id=mi22168" id="status">My Status</a>
+			  
+				<a href="http://judge.u-aizu.ac.jp/onlinejudge/introduction.jsp" id="help">For beginners&nbsp;&nbsp;&nbsp;&nbsp;</a>
+				<a href="http://judge.u-aizu.ac.jp/onlinejudge/index.jsp" class="now">HOME</a><span class="padding6">-</span>
+			<a href="http://judge.u-aizu.ac.jp/onlinejudge/topic.jsp?cid=ALDS1">ALDS1</a><span class="padding6">-</span><a href="http://judge.u-aizu.ac.jp/onlinejudge/topic.jsp?cid=ALDS1#problems/ALDS1_8" class="now">ALDS1_8</a><span class="padding6">-</span>A</div>
+		</div>
+	</div>
+
+
+
+<script type="text/javascript">
+$(function(){
+    $('#dialog').dialog({
+        width:740,
+        autoOpen: false,
+        title:'Submission Form',
+
+        buttons: {
+            'Submit': function(){
+                var len = $('#source').val().length;
+                if ( len > 30000 ){
+                    alert('The source code is too long.');
+                } else {
+                    $('#sform').submit();
+                }
+            },
+            'Reset': function(){
+                $('#source').val('');
+            },
+            'Cancel': function() { 
+                $(this).dialog("close"); 
+            }
+       }
+    });
+    // Dialog Link
+/*
+    $('#problemSubmit').click(function(){
+        $('#dialog').dialog('open');
+        return false;
+    });
+*/
+    $('#problemSubmit2').click(function(){
+        $('#dialog').dialog('open');
+        return false;
+    });
+});
+</script>
+
+
+
+
+
+
+<div id="contents">
+	<div id="pageinfo">
+		<div class="wrapper">
+			<div class="subinfo">
+                              
+
+				<a href="http://judge.u-aizu.ac.jp/onlinejudge/board.jsp?pid=ALDS1_8_A" id="problemDiscussion" class="icon" title="Discussion">Discussion</a>
+				<a href="http://judge.u-aizu.ac.jp/onlinejudge/solution.jsp?pid=ALDS1_8_A" id="problemSolution" class="icon" title="Solution">Solution</a>
+				<a href="http://judge.u-aizu.ac.jp/onlinejudge/problem_statistics.jsp?id=ALDS1_8_A" id="problemStatistics" class="icon" title="Statistics">Statistics</a>
+                                <!--<a href="topic.jsp?cid=ALDS1#submit/ALDS1_8/A" class="icon" title="Submit">Submit</a>-->
+                                <a href="http://judge.u-aizu.ac.jp/onlinejudge/status.jsp#submit/ALDS1_8/A" class="icon" title="Submit">Submit</a>
+                              
+				<div class="spacer1">&nbsp;</div>
+
+                                
+                                <!--<span style="font-size:7pt"><a href="topic.jsp?cid=ALDS1#submit/ALDS1_8/A" style="color:#888888">Submit [Old Version]</a></span><br>-->
+                                
+                                <div class="dat">
+				
+				
+                                
+                                </div>
+				
+
+			</div>
+                        
+		        <h1 class="title"><a href="http://judge.u-aizu.ac.jp/onlinejudge/topic.jsp?cid=ALDS1#problems/ALDS1_8">Binary search trees</a> - Binary Search Tree I</h1>
+                        
+			<span class="text-red3">Time Limit : 2 sec, Memory Limit : 65536 KB</span>
+
+
+		</div>
+	</div>
+	<div id="page">
+	  <div class="wrapper">
+	    <div class="description">
+	        
+		
+  
+                <!--<script src="./IMAGE/varmath.js" charset="UTF-8"></script>-->
+
+	        
+<script type="text/x-mathjax-config;executed=true">
+  MathJax.Hub.Config({ tex2jax: { inlineMath: [["$","$"], ["\\(","\\)"]], processEscapes: true }});
+</script>
+<script type="text/javascript" src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/MathJax.js">
+</script>
+
+<h1>二分探索木I</h1>
+
+<p>
+探索木は、挿入、検索、削除などの操作が行えるデータ構造で、辞書あるいは優先度付きキューとして用いることができます。探索木の中でも最も基本的なものが二分探索木です。二分探索木は、各節点にキーを持ち、次に示す二分探索木条件(Binary search tree property) を常に満たすように構築されます：
+</p>
+
+<ul>
+<li><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-1-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-1" style="display: inline-block; width: 0.691em;"><span style="display: inline-block; position: relative; width: 0.585em; height: 0px; font-size: 118%;"><span style="position: absolute; clip: rect(0.85em 1000em 1.592em -0.421em); top: -1.427em; left: 0.003em;"><span class="mrow" id="MathJax-Span-2" style="display: inline-block;"><span class="mi" id="MathJax-Span-3" style="display: inline-block;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0078.png" style="width: 10px; height: 9px; vertical-align: 0px; margin-right: 0.056em;"></span></span><span style="display: inline-block; width: 0px; height: 1.433em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.628em; vertical-align: -0.059em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-1">x</script> を２分探索木に属するある節点とする。 <span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-2-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-4" style="display: inline-block; width: 0.585em;"><span style="display: inline-block; position: relative; width: 0.479em; height: 0px; font-size: 118%;"><span style="position: absolute; clip: rect(1.062em 1000em 2.015em -0.474em); top: -1.639em; left: 0.003em;"><span class="mrow" id="MathJax-Span-5" style="display: inline-block;"><span class="mi" id="MathJax-Span-6" style="display: inline-block;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0079.png" style="width: 9px; height: 12px; vertical-align: -4px; margin-right: 0.003em;"><span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 1.645em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.878em; vertical-align: -0.309em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-2">y</script> を <span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-3-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-7" style="display: inline-block; width: 0.691em;"><span style="display: inline-block; position: relative; width: 0.585em; height: 0px; font-size: 118%;"><span style="position: absolute; clip: rect(0.85em 1000em 1.592em -0.421em); top: -1.427em; left: 0.003em;"><span class="mrow" id="MathJax-Span-8" style="display: inline-block;"><span class="mi" id="MathJax-Span-9" style="display: inline-block;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0078.png" style="width: 10px; height: 9px; vertical-align: 0px; margin-right: 0.056em;"></span></span><span style="display: inline-block; width: 0px; height: 1.433em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.628em; vertical-align: -0.059em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-3">x</script> の左部分木に属する節点とすると、<span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-4-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-10" style="display: inline-block; width: 0.585em;"><span style="display: inline-block; position: relative; width: 0.479em; height: 0px; font-size: 118%;"><span style="position: absolute; clip: rect(1.062em 1000em 2.015em -0.474em); top: -1.639em; left: 0.003em;"><span class="mrow" id="MathJax-Span-11" style="display: inline-block;"><span class="mi" id="MathJax-Span-12" style="display: inline-block;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0079.png" style="width: 9px; height: 12px; vertical-align: -4px; margin-right: 0.003em;"><span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 1.645em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.878em; vertical-align: -0.309em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-4">y</script> のキー <span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-5-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-13" style="display: inline-block; width: 1.962em;"><span style="display: inline-block; position: relative; width: 1.645em; height: 0px; font-size: 118%;"><span style="position: absolute; clip: rect(1.009em 1000em 2.121em -0.368em); top: -1.798em; left: 0.003em;"><span class="mrow" id="MathJax-Span-14" style="display: inline-block;"><span class="mo" id="MathJax-Span-15" style="display: inline-block;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/2264.png" style="width: 13px; height: 15px; vertical-align: -3px; margin-right: 0.109em;"></span><span class="mi" id="MathJax-Span-16" style="display: inline-block; padding-left: 0.267em;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0078.png" style="width: 10px; height: 9px; vertical-align: 0px; margin-right: 0.056em;"></span></span><span style="display: inline-block; width: 0px; height: 1.803em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.003em; vertical-align: -0.247em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-5">\leq x</script>のキーである。また、<span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-6-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-17" style="display: inline-block; width: 0.585em;"><span style="display: inline-block; position: relative; width: 0.479em; height: 0px; font-size: 118%;"><span style="position: absolute; clip: rect(1.062em 1000em 2.015em -0.474em); top: -1.639em; left: 0.003em;"><span class="mrow" id="MathJax-Span-18" style="display: inline-block;"><span class="mi" id="MathJax-Span-19" style="display: inline-block;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0079.png" style="width: 9px; height: 12px; vertical-align: -4px; margin-right: 0.003em;"><span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 1.645em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.878em; vertical-align: -0.309em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-6">y</script> を <span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-7-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-20" style="display: inline-block; width: 0.691em;"><span style="display: inline-block; position: relative; width: 0.585em; height: 0px; font-size: 118%;"><span style="position: absolute; clip: rect(0.85em 1000em 1.592em -0.421em); top: -1.427em; left: 0.003em;"><span class="mrow" id="MathJax-Span-21" style="display: inline-block;"><span class="mi" id="MathJax-Span-22" style="display: inline-block;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0078.png" style="width: 10px; height: 9px; vertical-align: 0px; margin-right: 0.056em;"></span></span><span style="display: inline-block; width: 0px; height: 1.433em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.628em; vertical-align: -0.059em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-7">x</script> の右部分木に属する節点とすると、<span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-8-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-23" style="display: inline-block; width: 0.691em;"><span style="display: inline-block; position: relative; width: 0.585em; height: 0px; font-size: 118%;"><span style="position: absolute; clip: rect(0.85em 1000em 1.592em -0.421em); top: -1.427em; left: 0.003em;"><span class="mrow" id="MathJax-Span-24" style="display: inline-block;"><span class="mi" id="MathJax-Span-25" style="display: inline-block;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0078.png" style="width: 10px; height: 9px; vertical-align: 0px; margin-right: 0.056em;"></span></span><span style="display: inline-block; width: 0px; height: 1.433em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.628em; vertical-align: -0.059em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-8">x</script> のキー <span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-9-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-26" style="display: inline-block; width: 1.856em;"><span style="display: inline-block; position: relative; width: 1.539em; height: 0px; font-size: 118%;"><span style="position: absolute; clip: rect(1.009em 1000em 2.174em -0.368em); top: -1.798em; left: 0.003em;"><span class="mrow" id="MathJax-Span-27" style="display: inline-block;"><span class="mo" id="MathJax-Span-28" style="display: inline-block;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/2264.png" style="width: 13px; height: 15px; vertical-align: -3px; margin-right: 0.109em;"></span><span class="mi" id="MathJax-Span-29" style="display: inline-block; padding-left: 0.267em;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0079.png" style="width: 9px; height: 12px; vertical-align: -4px; margin-right: 0.003em;"><span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 1.803em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.128em; vertical-align: -0.309em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-9">\leq y</script> のキーである。
+</li>
+</ul>
+
+<p>
+次の図は二分探索木の例です。
+</p>
+
+<center>
+<img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/ALDS1_8_A.png">
+</center>
+<br>
+
+<p>
+例えば、キーが80の節点の左部分木に属する節点のキーは80以下であり、右部分木に属する節点のキーは80以上になっています。二分探索木に中間順巡回を行うと、昇順に並べられたキーの列を得ることができます。
+</p>
+
+<p>
+二分探索木は、データの挿入や削除が行われても常にこのような条件が全ての節点で成り立つように実装しなければなりません。リストと同様に、節点をポインタで連結することで木を表し、各節点には値（キー）に加えその親、左の子、右の子へのポインタを持たせます。
+</p>
+
+<p>
+二分探索木 <span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-10-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-30" style="display: inline-block; width: 0.85em;"><span style="display: inline-block; position: relative; width: 0.691em; height: 0px; font-size: 118%;"><span style="position: absolute; clip: rect(0.85em 1000em 1.856em -0.474em); top: -1.692em; left: 0.003em;"><span class="mrow" id="MathJax-Span-31" style="display: inline-block;"><span class="mi" id="MathJax-Span-32" style="display: inline-block;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0054.png" style="width: 13px; height: 13px; margin-right: -0.103em;"><span style="display: inline-block; overflow: hidden; height: 1px; width: 0.109em;"></span></span></span><span style="display: inline-block; width: 0px; height: 1.698em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.941em; vertical-align: -0.059em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-10">T</script> に新たに値 <span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-11-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-33" style="display: inline-block; width: 0.585em;"><span style="display: inline-block; position: relative; width: 0.479em; height: 0px; font-size: 118%;"><span style="position: absolute; clip: rect(0.85em 1000em 1.592em -0.474em); top: -1.427em; left: 0.003em;"><span class="mrow" id="MathJax-Span-34" style="display: inline-block;"><span class="mi" id="MathJax-Span-35" style="display: inline-block;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0076.png" style="width: 9px; height: 9px; vertical-align: 0px; margin-right: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 1.433em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.628em; vertical-align: -0.059em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-11">v</script> を挿入するには以下の疑似コードに示す insert を実行します。insert は、キーが <span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-12-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-36" style="display: inline-block; width: 0.585em;"><span style="display: inline-block; position: relative; width: 0.479em; height: 0px; font-size: 118%;"><span style="position: absolute; clip: rect(0.85em 1000em 1.592em -0.474em); top: -1.427em; left: 0.003em;"><span class="mrow" id="MathJax-Span-37" style="display: inline-block;"><span class="mi" id="MathJax-Span-38" style="display: inline-block;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0076.png" style="width: 9px; height: 9px; vertical-align: 0px; margin-right: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 1.433em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.628em; vertical-align: -0.059em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-12">v</script>、左の子が <span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-13-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-39" style="display: inline-block; width: 2.439em;"><span style="display: inline-block; position: relative; width: 2.068em; height: 0px; font-size: 118%;"><span style="position: absolute; clip: rect(0.85em 1000em 1.856em -0.421em); top: -1.692em; left: 0.003em;"><span class="mrow" id="MathJax-Span-40" style="display: inline-block;"><span class="mi" id="MathJax-Span-41" style="display: inline-block;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/004E.png" style="width: 17px; height: 13px; margin-right: -0.103em;"><span style="display: inline-block; overflow: hidden; height: 1px; width: 0.109em;"></span></span><span class="mi" id="MathJax-Span-42" style="display: inline-block;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0049.png" style="width: 9px; height: 13px; margin-right: -0.05em;"><span style="display: inline-block; overflow: hidden; height: 1px; width: 0.056em;"></span></span><span class="mi" id="MathJax-Span-43" style="display: inline-block;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/004C.png" style="width: 12px; height: 13px; margin-right: 0.056em;"></span></span><span style="display: inline-block; width: 0px; height: 1.698em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.941em; vertical-align: -0.059em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-13">NIL</script>、右の子が <span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-14-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-44" style="display: inline-block; width: 2.439em;"><span style="display: inline-block; position: relative; width: 2.068em; height: 0px; font-size: 118%;"><span style="position: absolute; clip: rect(0.85em 1000em 1.856em -0.421em); top: -1.692em; left: 0.003em;"><span class="mrow" id="MathJax-Span-45" style="display: inline-block;"><span class="mi" id="MathJax-Span-46" style="display: inline-block;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/004E.png" style="width: 17px; height: 13px; margin-right: -0.103em;"><span style="display: inline-block; overflow: hidden; height: 1px; width: 0.109em;"></span></span><span class="mi" id="MathJax-Span-47" style="display: inline-block;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0049.png" style="width: 9px; height: 13px; margin-right: -0.05em;"><span style="display: inline-block; overflow: hidden; height: 1px; width: 0.056em;"></span></span><span class="mi" id="MathJax-Span-48" style="display: inline-block;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/004C.png" style="width: 12px; height: 13px; margin-right: 0.056em;"></span></span><span style="display: inline-block; width: 0px; height: 1.698em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.941em; vertical-align: -0.059em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-14">NIL</script> であるよな節点 <span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-15-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-49" style="display: inline-block; width: 0.585em;"><span style="display: inline-block; position: relative; width: 0.479em; height: 0px; font-size: 118%;"><span style="position: absolute; clip: rect(0.85em 1000em 1.592em -0.421em); top: -1.427em; left: 0.003em;"><span class="mrow" id="MathJax-Span-50" style="display: inline-block;"><span class="mi" id="MathJax-Span-51" style="display: inline-block;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/007A.png" style="width: 9px; height: 9px; vertical-align: 0px; margin-right: 0.003em;"><span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 1.433em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.628em; vertical-align: -0.059em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-15">z</script> を受け取り、<span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-16-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-52" style="display: inline-block; width: 0.85em;"><span style="display: inline-block; position: relative; width: 0.691em; height: 0px; font-size: 118%;"><span style="position: absolute; clip: rect(0.85em 1000em 1.856em -0.474em); top: -1.692em; left: 0.003em;"><span class="mrow" id="MathJax-Span-53" style="display: inline-block;"><span class="mi" id="MathJax-Span-54" style="display: inline-block;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0054.png" style="width: 13px; height: 13px; margin-right: -0.103em;"><span style="display: inline-block; overflow: hidden; height: 1px; width: 0.109em;"></span></span></span><span style="display: inline-block; width: 0px; height: 1.698em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.941em; vertical-align: -0.059em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-16">T</script> の正しい位置に挿入します。
+</p>
+
+<pre>1 insert(T, z)
+2     y = NIL // x の親
+3     x = 'T の根'
+4     while x ≠ NIL
+5         y = x // 親を設定
+6         if z.key &lt; x.key
+7             x = x.left // 左の子へ移動
+8         else 
+9             x = x.right // 右の子へ移動
+10    z.p = y
+11
+12    if y == NIL // T が空の場合
+13        'T の根' = z
+14    else if z.key &lt; y.key
+15        y.left = z // z を y の左の子にする
+16    else 
+17        y.right = z // z を y の右の子にする
+</pre>
+
+<p>
+二分探索木 <span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-17-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-55" style="display: inline-block; width: 0.85em;"><span style="display: inline-block; position: relative; width: 0.691em; height: 0px; font-size: 118%;"><span style="position: absolute; clip: rect(0.85em 1000em 1.856em -0.474em); top: -1.692em; left: 0.003em;"><span class="mrow" id="MathJax-Span-56" style="display: inline-block;"><span class="mi" id="MathJax-Span-57" style="display: inline-block;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0054.png" style="width: 13px; height: 13px; margin-right: -0.103em;"><span style="display: inline-block; overflow: hidden; height: 1px; width: 0.109em;"></span></span></span><span style="display: inline-block; width: 0px; height: 1.698em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.941em; vertical-align: -0.059em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-17">T</script> に対し、以下の命令を実行するプログラムを作成してください。
+</p>
+
+<ul>
+<li><span>insert </span> <span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-18-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-58" style="display: inline-block; width: 0.585em;"><span style="display: inline-block; position: relative; width: 0.479em; height: 0px; font-size: 118%;"><span style="position: absolute; clip: rect(0.85em 1000em 1.856em -0.421em); top: -1.692em; left: 0.003em;"><span class="mrow" id="MathJax-Span-59" style="display: inline-block;"><span class="mi" id="MathJax-Span-60" style="display: inline-block;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/006B.png" style="width: 9px; height: 13px; vertical-align: 0px; margin-right: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 1.698em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.941em; vertical-align: -0.059em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-18">k</script>: <span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-19-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-61" style="display: inline-block; width: 0.85em;"><span style="display: inline-block; position: relative; width: 0.691em; height: 0px; font-size: 118%;"><span style="position: absolute; clip: rect(0.85em 1000em 1.856em -0.474em); top: -1.692em; left: 0.003em;"><span class="mrow" id="MathJax-Span-62" style="display: inline-block;"><span class="mi" id="MathJax-Span-63" style="display: inline-block;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0054.png" style="width: 13px; height: 13px; margin-right: -0.103em;"><span style="display: inline-block; overflow: hidden; height: 1px; width: 0.109em;"></span></span></span><span style="display: inline-block; width: 0px; height: 1.698em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.941em; vertical-align: -0.059em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-19">T</script>にキー <span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-20-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-64" style="display: inline-block; width: 0.585em;"><span style="display: inline-block; position: relative; width: 0.479em; height: 0px; font-size: 118%;"><span style="position: absolute; clip: rect(0.85em 1000em 1.856em -0.421em); top: -1.692em; left: 0.003em;"><span class="mrow" id="MathJax-Span-65" style="display: inline-block;"><span class="mi" id="MathJax-Span-66" style="display: inline-block;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/006B.png" style="width: 9px; height: 13px; vertical-align: 0px; margin-right: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 1.698em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.941em; vertical-align: -0.059em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-20">k</script> を挿入する。
+</li><li><span>print</span>: キーを木の中間順巡回(inorder tree walk)と先行順巡回(preorder tree walk)アルゴリズムで出力する。
+</li></ul>
+
+<p>
+挿入のアルゴリズムは上記疑似コードに従ってください。
+</p>
+
+
+
+<h2>入力</h2>
+
+<p>
+入力の最初の行に、命令の数 <span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-21-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-67" style="display: inline-block; width: 1.009em;"><span style="display: inline-block; position: relative; width: 0.85em; height: 0px; font-size: 118%;"><span style="position: absolute; clip: rect(0.85em 1000em 1.592em -0.474em); top: -1.427em; left: 0.003em;"><span class="mrow" id="MathJax-Span-68" style="display: inline-block;"><span class="mi" id="MathJax-Span-69" style="display: inline-block;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/006D.png" style="width: 16px; height: 9px; vertical-align: 0px; margin-right: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 1.433em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.628em; vertical-align: -0.059em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-21">m</script> が与えられます。続く <span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-22-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-70" style="display: inline-block; width: 1.009em;"><span style="display: inline-block; position: relative; width: 0.85em; height: 0px; font-size: 118%;"><span style="position: absolute; clip: rect(0.85em 1000em 1.592em -0.474em); top: -1.427em; left: 0.003em;"><span class="mrow" id="MathJax-Span-71" style="display: inline-block;"><span class="mi" id="MathJax-Span-72" style="display: inline-block;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/006D.png" style="width: 16px; height: 9px; vertical-align: 0px; margin-right: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 1.433em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.628em; vertical-align: -0.059em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-22">m</script> 行目に、<span>insert </span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-23-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-73" style="display: inline-block; width: 0.585em;"><span style="display: inline-block; position: relative; width: 0.479em; height: 0px; font-size: 118%;"><span style="position: absolute; clip: rect(0.85em 1000em 1.856em -0.421em); top: -1.692em; left: 0.003em;"><span class="mrow" id="MathJax-Span-74" style="display: inline-block;"><span class="mi" id="MathJax-Span-75" style="display: inline-block;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/006B.png" style="width: 9px; height: 13px; vertical-align: 0px; margin-right: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 1.698em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.941em; vertical-align: -0.059em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-23">k</script> または <span>print</span> の形式で命令が１行に与えられます。
+</p>
+
+
+<h2>出力</h2>
+
+<p>
+<span>print</span>命令ごとに、中間順巡回アルゴリズム、先行順巡回アルゴリズムによって得られるキーの順列をそれぞれ１行に出力してください。<u>各キーの前に</u>１つの空白を出力してください。
+</p>
+
+<h2>制約</h2>
+
+<ul>
+<li>命令の数は <span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-24-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-76" style="display: inline-block; width: 4.187em;"><span style="display: inline-block; position: relative; width: 3.551em; height: 0px; font-size: 118%;"><span style="position: absolute; clip: rect(1.062em 1000em 2.227em -0.421em); top: -1.851em; left: 0.003em;"><span class="mrow" id="MathJax-Span-77" style="display: inline-block;"><span class="mn" id="MathJax-Span-78" style="display: inline-block;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0035.png" style="width: 8px; height: 13px; vertical-align: 0px; margin-right: 0.056em;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0030.png" style="width: 9px; height: 13px; vertical-align: 0px; margin-right: 0.056em;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0030.png" style="width: 9px; height: 13px; vertical-align: 0px; margin-right: 0.056em;"></span><span class="mo" id="MathJax-Span-79" style="display: inline-block;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/002C.png" style="width: 4px; height: 6px; vertical-align: -4px; margin-right: 0.056em;"></span><span class="mn" id="MathJax-Span-80" style="display: inline-block; padding-left: 0.162em;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0030.png" style="width: 9px; height: 13px; vertical-align: 0px; margin-right: 0.056em;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0030.png" style="width: 9px; height: 13px; vertical-align: 0px; margin-right: 0.056em;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0030.png" style="width: 9px; height: 13px; vertical-align: 0px; margin-right: 0.056em;"></span></span><span style="display: inline-block; width: 0px; height: 1.856em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.128em; vertical-align: -0.309em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-24">500,000</script> を超えない。</li>
+<li>print 命令の数は <span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-25-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-81" style="display: inline-block; width: 1.221em;"><span style="display: inline-block; position: relative; width: 1.009em; height: 0px; font-size: 118%;"><span style="position: absolute; clip: rect(0.903em 1000em 1.856em -0.368em); top: -1.692em; left: 0.003em;"><span class="mrow" id="MathJax-Span-82" style="display: inline-block;"><span class="mn" id="MathJax-Span-83" style="display: inline-block;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0031.png" style="width: 8px; height: 12px; margin-right: 0.056em;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0030.png" style="width: 9px; height: 13px; vertical-align: 0px; margin-right: 0.056em;"></span></span><span style="display: inline-block; width: 0px; height: 1.698em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.941em; vertical-align: -0.059em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-25">10</script> を超えない。</li>
+<li><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-26-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-84" style="display: inline-block; width: 21.56em;"><span style="display: inline-block; position: relative; width: 18.276em; height: 0px; font-size: 118%;"><span style="position: absolute; clip: rect(1.221em 1000em 2.545em -0.368em); top: -2.169em; left: 0.003em;"><span class="mrow" id="MathJax-Span-85" style="display: inline-block;"><span class="mo" id="MathJax-Span-86" style="display: inline-block;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/2212.png" style="width: 13px; height: 1px; vertical-align: 4px; margin-right: 0.109em;"></span><span class="mn" id="MathJax-Span-87" style="display: inline-block;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0032.png" style="width: 8px; height: 12px; margin-right: 0.056em;"></span><span class="mo" id="MathJax-Span-88" style="display: inline-block;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/002C.png" style="width: 4px; height: 6px; vertical-align: -4px; margin-right: 0.056em;"></span><span class="mn" id="MathJax-Span-89" style="display: inline-block; padding-left: 0.162em;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0030.png" style="width: 9px; height: 13px; vertical-align: 0px; margin-right: 0.056em;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0030.png" style="width: 9px; height: 13px; vertical-align: 0px; margin-right: 0.056em;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0030.png" style="width: 9px; height: 13px; vertical-align: 0px; margin-right: 0.056em;"></span><span class="mo" id="MathJax-Span-90" style="display: inline-block;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/002C.png" style="width: 4px; height: 6px; vertical-align: -4px; margin-right: 0.056em;"></span><span class="mn" id="MathJax-Span-91" style="display: inline-block; padding-left: 0.162em;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0030.png" style="width: 9px; height: 13px; vertical-align: 0px; margin-right: 0.056em;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0030.png" style="width: 9px; height: 13px; vertical-align: 0px; margin-right: 0.056em;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0030.png" style="width: 9px; height: 13px; vertical-align: 0px; margin-right: 0.056em;"></span><span class="mo" id="MathJax-Span-92" style="display: inline-block;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/002C.png" style="width: 4px; height: 6px; vertical-align: -4px; margin-right: 0.056em;"></span><span class="mn" id="MathJax-Span-93" style="display: inline-block; padding-left: 0.162em;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0030.png" style="width: 9px; height: 13px; vertical-align: 0px; margin-right: 0.056em;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0030.png" style="width: 9px; height: 13px; vertical-align: 0px; margin-right: 0.056em;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0030.png" style="width: 9px; height: 13px; vertical-align: 0px; margin-right: 0.056em;"></span><span class="mo" id="MathJax-Span-94" style="display: inline-block; padding-left: 0.267em;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/2264.png" style="width: 13px; height: 15px; vertical-align: -3px; margin-right: 0.109em;"></span><span class="texatom" id="MathJax-Span-95" style="display: inline-block; padding-left: 0.267em;"><span class="mrow" id="MathJax-Span-96" style="display: inline-block;"><span class="mo" id="MathJax-Span-97" style="display: inline-block;"><span style="font-family: STIXGeneral, &#39;Arial Unicode MS&#39;, serif; font-size: 85%; font-style: normal; font-weight: normal;">キ</span></span></span></span><span class="texatom" id="MathJax-Span-98" style="display: inline-block;"><span class="mrow" id="MathJax-Span-99" style="display: inline-block;"><span class="mo" id="MathJax-Span-100" style="display: inline-block;"><span style="font-family: STIXGeneral, &#39;Arial Unicode MS&#39;, serif; font-size: 85%; font-style: normal; font-weight: normal;">ー</span></span></span></span><span class="mo" id="MathJax-Span-101" style="display: inline-block; padding-left: 0.267em;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/2264.png" style="width: 13px; height: 15px; vertical-align: -3px; margin-right: 0.109em;"></span><span class="mn" id="MathJax-Span-102" style="display: inline-block; padding-left: 0.267em;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0032.png" style="width: 8px; height: 12px; margin-right: 0.056em;"></span><span class="mo" id="MathJax-Span-103" style="display: inline-block;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/002C.png" style="width: 4px; height: 6px; vertical-align: -4px; margin-right: 0.056em;"></span><span class="mn" id="MathJax-Span-104" style="display: inline-block; padding-left: 0.162em;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0030.png" style="width: 9px; height: 13px; vertical-align: 0px; margin-right: 0.056em;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0030.png" style="width: 9px; height: 13px; vertical-align: 0px; margin-right: 0.056em;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0030.png" style="width: 9px; height: 13px; vertical-align: 0px; margin-right: 0.056em;"></span><span class="mo" id="MathJax-Span-105" style="display: inline-block;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/002C.png" style="width: 4px; height: 6px; vertical-align: -4px; margin-right: 0.056em;"></span><span class="mn" id="MathJax-Span-106" style="display: inline-block; padding-left: 0.162em;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0030.png" style="width: 9px; height: 13px; vertical-align: 0px; margin-right: 0.056em;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0030.png" style="width: 9px; height: 13px; vertical-align: 0px; margin-right: 0.056em;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0030.png" style="width: 9px; height: 13px; vertical-align: 0px; margin-right: 0.056em;"></span><span class="mo" id="MathJax-Span-107" style="display: inline-block;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/002C.png" style="width: 4px; height: 6px; vertical-align: -4px; margin-right: 0.056em;"></span><span class="mn" id="MathJax-Span-108" style="display: inline-block; padding-left: 0.162em;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0030.png" style="width: 9px; height: 13px; vertical-align: 0px; margin-right: 0.056em;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0030.png" style="width: 9px; height: 13px; vertical-align: 0px; margin-right: 0.056em;"><img src="./二分探索木 挿入_ アルゴリズムとデータ構造 _ Aizu Online Judge_files/0030.png" style="width: 9px; height: 13px; vertical-align: 0px; margin-right: 0.056em;"></span></span><span style="display: inline-block; width: 0px; height: 2.174em;"></span></span></span><span style="border-left-width: 0.003em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.316em; vertical-align: -0.309em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-26">-2,000,000,000 \leq キー \leq 2,000,000,000</script></li>
+<li>上記の疑似コードのアルゴリズムに従う場合、木の高さは 100 を超えない。</li>
+<li>二分探索木中のキーに重複は発生しない。</li>
+</ul>
+
+
+<h2>入力例 1</h2>
+<pre>8
+insert 30
+insert 88
+insert 12
+insert 1
+insert 20
+insert 17
+insert 25
+print
+</pre>
+
+<h2>出力例 1</h2>
+<pre> 1 12 17 20 25 30 88
+ 30 12 1 20 17 25 88
+</pre>
+
+<h2>参考文献</h2>
+
+<p>
+Introduction to Algorithms, Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein. The MIT Press.
+</p>
+
+<h2>Note</h2>
+
+<p>
+A template program in C is available from <a href="http://judge.u-aizu.ac.jp/onlinejudge/template/ALDS1_8_A_template.c">here</a>.
+</p>
+
+
+<center>
+<a href="http://judge.u-aizu.ac.jp/onlinejudge/commentary.jsp?id=ALDS1_8_A">
+<div class="button">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;解説&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</a>	
+</center>
+
+
+                <hr>
+
+		  <div class="dat" style="font-size:10pt">
+                   
+
+		   
+
+		   
+		   
+
+		   
+
+                   
+                   
+
+		</div>
+		<div class="spacer60">&nbsp;</div>
+	    </div>
+	  </div>
+	</div>
+
+
+
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+ 
+ $('#pwd').append('<a href="topic.jsp?cid=ALDS1">ALDS1</a><span class="padding6">-</span><a href="topic.jsp?cid=ALDS1#problems/ALDS1_8" class="now">ALDS1_8</a><span class="padding6">-</span>A</a>');
+ 
+});
+</script>
+
+</div>
+
+
+<div class="ui-dialog ui-widget ui-widget-content ui-corner-all  ui-draggable ui-resizable" tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-dialog" style="display: none; z-index: 1000; outline: 0px; position: absolute;"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span class="ui-dialog-title" id="ui-dialog-title-dialog">Submission Form</span><a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_8_A#" class="ui-dialog-titlebar-close ui-corner-all" role="button"><span class="ui-icon ui-icon-closethick">close</span></a></div><div id="dialog" style="overflow: hidden;" class="ui-dialog-content ui-widget-content">
+<form id="sform" action="http://judge.u-aizu.ac.jp/onlinejudge/servlet/Submit" method="POST">
+<fieldset class="form">
+<table class="form" width="740" border="0" cellspacing="0" cellpadding="0">
+	<tbody><tr>
+		<td width="100"><label>User ID:</label></td>
+		<td><input type="TEXT" name="userID" value="mi22168"></td>
+	</tr>
+	<tr>
+		<td width="100"><label>Password:</label></td>
+		<td><input type="PASSWORD" name="password" value="password"></td>
+	</tr>
+	<tr>
+	        <td width="100"><label>Problem NO:</label></td>
+		<td><input type="TEXT" name="problemNO" value="ALDS1_8_A"></td>
+	</tr>
+	<tr>
+	        <td width="100"><label>Language:</label></td>
+		<td>
+		<select name="language">
+		  
+		</select>
+<font color="#aaa">&nbsp; *&nbsp;It depends on the problem</font>
+		</td>
+		</tr>
+	<tr>
+	        <td width="100"><label>Source Code:</label></td>
+		<td><textarea id="source" name="sourceCode" rows="16" cols="62"></textarea></td>
+	</tr>
+</tbody></table>
+
+</fieldset>
+
+</form>
+
+</div><div class="ui-resizable-handle ui-resizable-n"></div><div class="ui-resizable-handle ui-resizable-e"></div><div class="ui-resizable-handle ui-resizable-s"></div><div class="ui-resizable-handle ui-resizable-w"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se ui-icon-grip-diagonal-se" style="z-index: 1001;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 1002;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 1003;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 1004;"></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text">Submit</span></button><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text">Reset</span></button><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text">Cancel</span></button></div></div></div><div id="MathJax_Font_Test" style="position: absolute; visibility: hidden; top: 0px; left: 0px; width: auto; padding: 0px; border: 0px; margin: 0px; white-space: nowrap; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; font-size: 40px; font-weight: normal; font-style: normal; font-family: MathJax_AMS, monospace;">MATHJAX AMS &#710;&#61437; &#61439;</div></body></html>
